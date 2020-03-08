@@ -1,0 +1,36 @@
+{
+  "name": "@pm/create-ng-app",
+  "version": "1.0.0",
+  "description": "A node.js cli to bootstrap web application",
+  "main": "src/index.js",
+  "bin": {
+    "@pm/create-app": "bin/create-app",
+    "create-app": "bin/create-app"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "cli",
+    "app",
+    "project",
+    "bootstrap",
+    "create app",
+    "create web app",
+    "create project"
+  ],
+  "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^3.0.0",
+    "commander": "^4.1.1",
+    "execa": "^4.0.0",
+    "inquirer": "^7.0.6",
+    "listr": "^0.14.3",
+    "ncp": "^2.0.0",
+    "pkg-install": "^1.0.0"
+  }
+}
