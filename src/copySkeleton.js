@@ -2,6 +2,7 @@ const path = require('path');
 const fs = require('fs');
 const ncp = require('ncp');
 const { promisify } = require('util');
+const chalk = require('chalk');
 
 const asyncAccess = promisify(fs.access);
 const asyncCopy = promisify(ncp);
