@@ -1,6 +1,6 @@
-# Application name here
+# AngularJs Application
 
-Web application made with create-app
+AngularJs application made with [create-ng-app](https://github.com/pmarino84/create-ng-app).
 
 ## npm start
 

@@ -1,11 +1,11 @@
 const path = require('path');
-const mkdirp = require('mkdirp');
-// const program = require('commander');
-// const copySkeleton = require('./copySkeleton.js');
-
-// program.option('-y --yes', 'Skip all prompt and use default', false);
+const { makedir } = require('./utils/file');
+const chalk = require('chalk');
+const figlet = require('figlet');
+const copySkeleton = require('./utils/skeleton');
 
 module.exports = function createApp(argv) {
+  chalk.yellow(figlet.textSync('create ng app', { horizontalLayout: 'full' }));
   // const args = program.parse(argv);
   const appName = argv.slice(2)[0];
   console.log(`creating project with name ${appName} args:\n`, argv);
@@ -13,10 +13,11 @@ module.exports = function createApp(argv) {
   // const appDir = process.cwd() + '/' + appName;
   const appDir = path.resolve(process.cwd(), appName);
   console.log("Creating directory: " + appDir);
-  mkdirp(appDir).then((made) => {
-    console.log(appDir + " successfully created, starting with: " + made);
-    // copySkeleton();
+  makedir(appDir).then((dir) => {
+    console.log(`Directory ${dir} successfully created`);
+    copySkeleton();
   }).catch(rej => {
-    console.error(rej);
+    chalk.red(rej);
+    process.exit(1);
   });
 };
