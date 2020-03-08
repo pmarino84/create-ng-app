@@ -5,7 +5,7 @@ const figlet = require('figlet');
 const copySkeleton = require('./utils/skeleton');
 
 module.exports = function createApp(argv) {
-  chalk.yellow(figlet.textSync('create ng app', { horizontalLayout: 'full' }));
+  console.log(chalk.yellow(figlet.textSync('create ng app', { horizontalLayout: 'full' })));
   // const args = program.parse(argv);
   const appName = argv.slice(2)[0];
   console.log(`creating project with name ${appName} args:\n`, argv);
@@ -15,9 +15,9 @@ module.exports = function createApp(argv) {
   console.log("Creating directory: " + appDir);
   makedir(appDir).then((dir) => {
     console.log(`Directory ${dir} successfully created`);
-    copySkeleton();
+    copySkeleton(dir);
   }).catch(rej => {
-    chalk.red(rej);
+    console.error(chalk.red(rej));
     process.exit(1);
   });
 };
