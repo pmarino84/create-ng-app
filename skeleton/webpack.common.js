@@ -7,16 +7,15 @@ const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const SRC_FOLDER_NAME = "src";
 const BUILD_FOLDER_NAME = "build";
-const PUBLIC_FOLDER_NAME = "public";
+const STATIC_FOLDER_NAME = "static";
 
 const SRC_FOLDER = path.resolve(__dirname, SRC_FOLDER_NAME);
 const BUILD_FOLDER = path.resolve(__dirname, BUILD_FOLDER_NAME);
-const PUBLIC_FOLDER = path.resolve(__dirname, PUBLIC_FOLDER_NAME);
+const STATIC_FOLDER = path.resolve(__dirname, STATIC_FOLDER_NAME);
 
 module.exports = {
 	context: SRC_FOLDER,
 	entry: {
-		// app: "./index.ts",
 		app: "./index.js"
 	},
 	output: {
@@ -59,10 +58,10 @@ module.exports = {
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-		new HtmlWebpackPlugin({ template: path.resolve(PUBLIC_FOLDER, "index.html"), inject: "body" }),
+		new HtmlWebpackPlugin({ template: path.resolve(STATIC_FOLDER, "index.html"), inject: "body" }),
 		new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" }),
 		new CopyWebpackPlugin([{
-			from: PUBLIC_FOLDER,
+			from: STATIC_FOLDER,
 			to: BUILD_FOLDER,
 			ignore: ["index.html"]
 		}])
