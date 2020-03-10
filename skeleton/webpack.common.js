@@ -24,7 +24,7 @@ module.exports = {
 		sourceMapFilename: "sourcemaps/[name].map"
 	},
 	resolve: {
-		extensions: [".ts", ".tsx", ".js", ".jsx", ".html", ".css", ".sass", ".scss", ".vue"]
+		extensions: [".ts", ".js", ".html", ".css", ".sass", ".scss"]
 	},
 	optimization: {
 		splitChunks: {

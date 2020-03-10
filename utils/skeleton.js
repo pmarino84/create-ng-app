@@ -1,22 +1,12 @@
 const path = require('path');
-const fs = require('fs');
-const ncp = require('ncp');
-const { promisify } = require('util');
-const chalk = require('chalk');
+// const chalk = require('chalk');
+const { asyncAccessRead, asyncCopy } = require('./file');
 
-const asyncAccess = promisify(fs.access);
-const asyncCopy = promisify(ncp);
-
-const copySkeletonFiles = (templateDir, targetDir) => asyncCopy(templateDir, targetDir, { clobber: false });
+const copySkeletonFiles = (skeletonDir, targetDir) => asyncCopy(skeletonDir, targetDir, { clobber: false });
 
 module.exports = function copySkeleton(targetDir) {
-  const templateDir = path.resolve(__dirname, '..', 'skeleton');
-  console.log("copy template dir: ", templateDir);
+  const skeletonDir = path.resolve(__dirname, '..', 'skeleton');
+  console.log("copy skeleton dir: ", skeletonDir);
 
-  return asyncAccess(templateDir, fs.constants.R_OK)
-    .then(() => copySkeletonFiles(templateDir, targetDir))
-    .catch(rej => {
-      console.error('%s Invalid template name', chalk.red.bold('ERROR'));
-      process.exit(1);
-    });
+  return asyncAccessRead(skeletonDir).then(() => copySkeletonFiles(skeletonDir, targetDir));
 };

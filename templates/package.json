@@ -1,7 +1,7 @@
 {
-  "name": "template-app",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "Web application made with create-app",
+  "description": "{{name}} application made with create-app",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -9,6 +9,7 @@
     "build": "webpack --env=prod --progress --profile --colors"
   },
   "keywords": [
+    "{{name}}",
     "create-app"
   ],
   "author": "",
