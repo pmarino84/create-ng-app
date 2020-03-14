@@ -1,0 +1,5 @@
+#! /usr/bin/env node
+
+const nguno = require('../index.js');
+
+nguno(process.argv);

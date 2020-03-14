@@ -1,5 +1,0 @@
-#! /usr/bin/env node
-
-const createApp = require('../index.js');
-
-createApp(process.argv);

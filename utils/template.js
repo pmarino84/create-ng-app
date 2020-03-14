@@ -15,25 +15,10 @@ const asyncCompileFileByPath = (pathToFile, options) => asyncReadFile(pathToFile
 
 const asyncCompileFileByName = (fileName, options) => asyncCompileFileByPath(composePath(fileName), options);
 
-const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByName(fileName, { name: appName });
+const writeCompiledToFile = (targetDir, fileName, content) => writeFile(path.resolve(targetDir, fileName), content);
 
-const asyncCompilePackageJsonTemplate = (appName) => asyncCompileFileWithAppName('package.json', appName);
-
-const asyncCompileReadmeTemplate = (appName) => asyncCompileFileWithAppName('README.md', appName);
-
-const asyncCompileIndexHTmlTemplate = (appName) => asyncCompileFileWithAppName('index.html', appName);
-
-const writePackageJson = (targetDir, content) => writeFile(path.resolve(targetDir, 'package.json'), content);
-
-const writeReadMe = (targetDir, content) => writeFile(path.resolve(targetDir, 'README.md'), content);
-
-const writeIndexHtml = (targetDir, content) => writeFile(path.resolve(targetDir, 'static', 'index.html'), content);
-
-module.exports = async function copyTemplates(targetDir, appName) {
-  const [packageJson, readMe, indexHtml] = await Promise.all([
-    asyncCompilePackageJsonTemplate(appName),
-    asyncCompileReadmeTemplate(appName),
-    asyncCompileIndexHTmlTemplate(appName)
-  ]);
-  return writePackageJson(targetDir, packageJson) && writeReadMe(targetDir, readMe) && writeIndexHtml(targetDir, indexHtml);
+module.exports = {
+  asyncCompileFileByPath,
+  asyncCompileFileByName,
+  writeCompiledToFile
 };

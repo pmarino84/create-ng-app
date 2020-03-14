@@ -1,26 +1,50 @@
-const path = require('path');
-const { makedir } = require('./utils/file');
 const chalk = require('chalk');
 const figlet = require('figlet');
-const copySkeleton = require('./utils/skeleton');
-const copyTemplates = require('./utils/template');
+const { Command } = require('commander');
+const createApp = require('./utils/createApp');
 
-module.exports = async function createApp(argv) {
-  console.log(chalk.yellow(figlet.textSync('Create AngularJs App', { horizontalLayout: 'full' })));
-  // const args = program.parse(argv);
-  const appName = argv.slice(2)[0];
-  // console.log(`creating project with name ${appName} args:\n`, argv);
-  // const appDir = __dirname + '/' + appName;
-  // const appDir = process.cwd() + '/' + appName;
-  const appDir = path.resolve(process.cwd(), appName);
-  console.log("Creating directory: " + appDir);
+const log = (...args) => console.log(...args);
+const logError = (...args) => console.error(...args);
+
+function banner(text, color = 'yellow') {
+  log(chalk[color](figlet.textSync(text, { horizontalLayout: 'full' })));
+}
+
+function makeProgram() {
+  const program = new Command('create-ng-app');
+
+  program.version('1.0.0').name('nguno')
+    .option('-a, --app <appName>', 'create application', null)
+    .option('-c, --component <componentName>', 'create component', null)
+    .option('-p, --path <dir>', '(optional) directory where create component, directive, services and similar', null);
+
+  return program;
+}
+
+function getInputs({ app, component, path }) {
+  return {
+    appName: app,
+    componentName: component,
+    dir: path
+  };
+}
+
+module.exports = async function nguno(argv) {
+  banner('nguno', 'yellow');
+
+  let program = makeProgram();
+
+  const args = program.parse(argv);
+  const inputs = getInputs(args);
+  log("INPUTS: ", inputs);
+
   try {
-    await makedir(appDir);
-    console.log(`Directory ${appDir} successfully created`);
-    await copySkeleton(appDir);
-    if (!await copyTemplates(appDir, appName)) throw new Error("Failed to copy compiled template into the app");
+    const { appName } = inputs;
+    if (appName) await createApp(appName);
   } catch (ex) {
-    console.error(chalk.red(ex));
+    logError(chalk.red(ex));
     process.exit(1);
   }
+
+  process.exit(0);
 };
