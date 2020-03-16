@@ -1,7 +1,7 @@
 {
   "name": "@pm/nguno",
   "version": "1.0.0",
-  "description": "A node.js cli to bootstrap AngularJs application",
+  "description": "A node.js cli to bootstrap modernized AngularJs application",
   "main": "index.js",
   "bin": {
     "@pm/nguno": "bin/nguno",
@@ -10,10 +10,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
+    "nguno",
     "cli",
     "app",
     "project",
@@ -33,6 +31,5 @@
     "lodash": "^4.17.15",
     "ncp": "^2.0.0",
     "pkg-install": "^1.0.0"
-  },
-  "devDependencies": {}
+  }
 }

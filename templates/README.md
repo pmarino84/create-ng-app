@@ -1,6 +1,6 @@
 # {{name}}
 
-AngularJs application made with [create-ng-app](https://github.com/pmarino84/create-ng-app).
+AngularJs application made with [nguno](https://github.com/pmarino84/create-ng-app).
 
 ## npm start
 

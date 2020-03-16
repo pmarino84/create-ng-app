@@ -1,0 +1,8 @@
+.app-link {
+  box-sizing: border-box;
+  color: #000;
+}
+
+.app-link:hover {
+  opacity: .7;
+}

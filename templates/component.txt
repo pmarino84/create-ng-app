@@ -1,0 +1,19 @@
+import template from './{{componentName}}.component.html';
+import './{{componentName}}.component.css';
+
+export const COMPONENT_NAME = '{{componentName}}';
+
+export class {{componentClassName}} {
+  static $inject = [];
+  constructor(...args) {
+    super(...args);
+  }
+}
+
+const {{componentName}}Configuration = {
+  controller: {{componentClassName}},
+template: template,
+  bindings: { }
+};
+
+export default {{componentName}}Configuration;

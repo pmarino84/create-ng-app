@@ -7,7 +7,8 @@ module.exports = wmerge(commons, {
 	devtool: "inline-source-map",
 	devServer: {
 		contentBase: commons.output.path,
-		open: false,
+		watchContentBase: true,
+		open: true,
 		hot: true
 	},
 	plugins: [

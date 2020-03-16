@@ -1,6 +1,7 @@
 node_modules
 .vscode
 .babelrc
+.eslintrc
 webpack*
 src
 static
