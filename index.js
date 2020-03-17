@@ -1,15 +1,7 @@
-const chalk = require('chalk');
-const figlet = require('figlet');
 const { Command } = require('commander');
 const Listr = require('listr');
+const { logErr, banner, logSuccess } = require('./utils/logger');
 const createApp = require('./utils/createApp');
-
-const log = (...args) => console.log(...args);
-const logError = (...args) => console.error(...args);
-
-function banner(text, color = 'yellow') {
-  log(chalk[color](figlet.textSync(text, { horizontalLayout: 'full' })));
-}
 
 function makeProgram() {
   const program = new Command();
@@ -44,8 +36,7 @@ class NotImplementedError extends Error {
 
 const rejectNotImplemented = () => Promise.reject(new NotImplementedError());
 
-/* ritorna i task (per Listr) da eseguire */
-function whatIdo({ appName, componentName, dir }) {
+function whatShouldIdo({ appName, componentName, dir }) {
   let tasks = [];
   if (appName) {
     tasks.push({
@@ -54,7 +45,7 @@ function whatIdo({ appName, componentName, dir }) {
     });
   } else if (componentName) {
     tasks.push({
-      title: `making component ${componentName}`,
+      title: `creating component ${componentName} under dir ${dir}`,
       task: rejectNotImplemented
     });
   }
@@ -68,17 +59,16 @@ module.exports = async function nguno(argv) {
 
   const args = program.parse(argv);
   const inputs = getInputs(args);
-  log("INPUTS: ", inputs);
 
-  let tasks = new Listr(whatIdo(inputs));
+  let tasks = new Listr(whatShouldIdo(inputs));
   try {
     await tasks.run();
   } catch (ex) {
-    logError(chalk.red(ex));
+    logErr(ex.message);
     process.exit(1);
   }
 
-  banner('DONE', 'green');
+  logSuccess('DONE');
 
   process.exit(0);
 };

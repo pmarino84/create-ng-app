@@ -5,9 +5,7 @@ const copySkeleton = require('./skeleton');
 const copyAppTemplates = require('./copyAppTemplates');
 
 // const execa = require('execa');
-// let installDependenciesResult = await execa('npm', ['install'], {
-//   cwd: appDir
-// });
+// let installDependenciesResult = await execa('npm', ['install'], { cwd: appDir });
 // if (installDependenciesResult.failed) throw new Error('Faild to install dependencies');
 
 function createApp(appName) {
