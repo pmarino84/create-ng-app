@@ -2,7 +2,6 @@ const path = require("path");
 
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const SRC_FOLDER_NAME = "src";
@@ -42,18 +41,6 @@ module.exports = {
 			{ test: /\.html$/, exclude: /node_modules/, loader: "html-loader?exportAsEs6Default" },
 			{ test: /\.js$/, exclude: /node_modules/, loaders: ["babel-loader"] },
 			{ test: /\.ts$/, exclude: /node_modules/, loaders: ["babel-loader", "ts-loader"] },
-			{ test: /\.css$/, loaders: [MiniCssExtractPlugin.loader, "css-loader"] },
-			{
-				test: /\.s[ac]ss$/,
-				loaders: [
-					MiniCssExtractPlugin.loader,
-					"css-loader",
-					{
-						loader: "sass-loader",
-						options: { implementation: require('dart-sass') }
-					}
-				]
-			},
 			{
 				test: /\.(png|jpe?g|gif|svg)$/i,
 				use: [
@@ -67,7 +54,6 @@ module.exports = {
 	plugins: [
 		new CleanWebpackPlugin(),
 		new HtmlWebpackPlugin({ template: path.resolve(STATIC_FOLDER, "index.html"), inject: "body" }),
-		new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" }),
 		new CopyWebpackPlugin([{
 			from: STATIC_FOLDER,
 			to: BUILD_FOLDER,
