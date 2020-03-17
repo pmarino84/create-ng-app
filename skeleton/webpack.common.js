@@ -53,6 +53,14 @@ module.exports = {
 						options: { implementation: require('dart-sass') }
 					}
 				]
+			},
+			{
+				test: /\.(png|jpe?g|gif|svg)$/i,
+				use: [
+					{
+						loader: 'file-loader',
+					},
+				],
 			}
 		]
 	},

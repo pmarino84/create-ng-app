@@ -8,10 +8,6 @@
   box-sizing: border-box;
 }
 
-.app {
-  height: 100vh;
-}
-
 .app-header,
 .app-section {
   height: 100vh;
@@ -42,6 +38,19 @@
 .guides__title {
   padding-top: 20px;
   padding-bottom: 10px;
+}
+
+.app__title {
+  width: 100%;
+}
+
+.logo {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-image: url(../../static/angularjs-for-header-only.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .app__sub-title {
