@@ -1,8 +1,10 @@
 const { Command } = require('commander');
 const Listr = require('listr');
-const { logErr, banner, logSuccess } = require('./utils/logger');
+const { logErr, logInfo, banner, logSuccess } = require('./utils/logger');
 const createApp = require('./utils/createApp');
 const createComponent = require('./utils/createComponent');
+const createModule = require('./utils/createModule');
+const { rejectNotImplemented } = require('./utils/notImplementedError');
 
 function makeProgram() {
   const program = new Command();
@@ -11,34 +13,26 @@ function makeProgram() {
     .option('-a, --app <appName>', 'create application', null)
     .option('-c, --component <componentName>', 'create component', null)
     .option('-d, --directive <directiveName>', '[NOT IMPLEMENTED] create directive', null)
+    .option('-m, --module <moduleName>', 'create module', null)
+    .option('-s, --service <serviceName>', '[NOT IMPLEMENTED] create service', null)
     .option('-p, --path <dir>', '[NOT IMPLEMENTED] (optional) directory where create component, directive, services and similar', null);
 
   return program;
 }
 
-function getInputs({ app, component, path }) {
+function getInputs({ app, component, directive, module, service, path }) {
   return {
     appName: app,
     componentName: component,
+    directiveName: directive,
+    moduleName: module,
+    serviceName: service,
     dir: path
   };
 }
 
-class NotImplementedError extends Error {
-  constructor() {
-    super('Not implemented');
-    // Ensure the name of this error is the same as the class name
-    this.name = this.constructor.name;
-    // This clips the constructor invocation from the stack trace.
-    // It's not absolutely essential, but it does make the stack trace a little nicer.
-    //  @see Node.js reference
-    Error.captureStackTrace(this, this.constructor);
-  }
-}
 
-const rejectNotImplemented = () => Promise.reject(new NotImplementedError());
-
-function whatShouldIdo({ appName, componentName, dir }) {
+function whatShouldIdo({ appName, componentName, directiveName, moduleName, serviceName, dir }) {
   let tasks = [];
   if (appName) {
     tasks.push({
@@ -49,6 +43,16 @@ function whatShouldIdo({ appName, componentName, dir }) {
     tasks.push({
       title: `creating component ${componentName} under dir ${dir}`,
       task: () => new Listr(createComponent(componentName))
+    });
+  } else if (moduleName) {
+    tasks.push({
+      title: `creating component ${moduleName} under dir ${dir}`,
+      task: () => new Listr(createModule(moduleName))
+    });
+  } else if (directiveName || serviceName) {
+    tasks.push({
+      title: 'task not implemented',
+      task: rejectNotImplemented
     });
   }
   return tasks;
@@ -61,6 +65,7 @@ module.exports = async function nguno(argv) {
 
   const args = program.parse(argv);
   const inputs = getInputs(args);
+  logInfo('INPUTS: ', inputs);
 
   let tasks = new Listr(whatShouldIdo(inputs));
   try {
