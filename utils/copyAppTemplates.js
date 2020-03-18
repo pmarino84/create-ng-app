@@ -16,11 +16,9 @@ const writeReadMe = (targetDir, content) => writeCompiledToFile(targetDir, 'READ
 const writeIndexHtml = (targetDir, content) => writeCompiledToFile(path.resolve(targetDir, 'static'), 'index.html', content);
 
 async function copyAppTemplates(targetDir, appName) {
-  const [packageJson, readMe, indexHtml] = await Promise.all([
-    asyncCompilePackageJsonTemplate(appName),
-    asyncCompileReadmeTemplate(appName),
-    asyncCompileIndexHTmlTemplate(appName)
-  ]);
+  const packageJson = await asyncCompilePackageJsonTemplate(appName);
+  const readMe = await asyncCompileReadmeTemplate(appName);
+  const indexHtml = await asyncCompileIndexHTmlTemplate(appName);
   return writePackageJson(targetDir, packageJson) && writeReadMe(targetDir, readMe) && writeIndexHtml(targetDir, indexHtml);
 };
 

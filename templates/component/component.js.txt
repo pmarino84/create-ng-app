@@ -10,10 +10,8 @@ export class {{componentClassName}} {
   }
 }
 
-const {{componentName}}Configuration = {
+export const {{componentName}}Configuration = {
   controller: {{componentClassName}},
-template: template,
+  template: template,
   bindings: { }
 };
-
-export default {{componentName}}Configuration;

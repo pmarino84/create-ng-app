@@ -2,6 +2,7 @@ const { Command } = require('commander');
 const Listr = require('listr');
 const { logErr, banner, logSuccess } = require('./utils/logger');
 const createApp = require('./utils/createApp');
+const createComponent = require('./utils/createComponent');
 
 function makeProgram() {
   const program = new Command();
@@ -9,7 +10,8 @@ function makeProgram() {
   program.version('1.0.0').name('nguno')
     .option('-a, --app <appName>', 'create application', null)
     .option('-c, --component <componentName>', 'create component', null)
-    .option('-p, --path <dir>', '(optional) directory where create component, directive, services and similar', null);
+    .option('-d, --directive <directiveName>', '[NOT IMPLEMENTED] create directive', null)
+    .option('-p, --path <dir>', '[NOT IMPLEMENTED] (optional) directory where create component, directive, services and similar', null);
 
   return program;
 }
@@ -46,7 +48,7 @@ function whatShouldIdo({ appName, componentName, dir }) {
   } else if (componentName) {
     tasks.push({
       title: `creating component ${componentName} under dir ${dir}`,
-      task: rejectNotImplemented
+      task: () => new Listr(createComponent(componentName))
     });
   }
   return tasks;
