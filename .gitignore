@@ -1,3 +1,7 @@
 node_modules
 .vs_code
 test
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
