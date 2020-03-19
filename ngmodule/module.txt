@@ -1,0 +1,7 @@
+import { module } from 'angular';
+
+const {{moduleNameCamelCase}}Module = module('{{moduleName}}', []);
+
+/* add here components, directives and others to the module */
+
+export default {{moduleNameCamelCase}}Module;

@@ -1,5 +1,5 @@
 const path = require('path');
-const { makedir } = require('./file');
+const { makedir } = require('../utils/file');
 const { camelCase } = require('lodash');
 const copyComponentTemplates = require('./copyComponentTemplates');
 

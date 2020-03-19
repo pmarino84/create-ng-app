@@ -1,9 +1,9 @@
 const { Command } = require('commander');
 const Listr = require('listr');
 const { logErr, logInfo, banner, logSuccess } = require('./utils/logger');
-const createApp = require('./utils/createApp');
-const createComponent = require('./utils/createComponent');
-const createModule = require('./utils/createModule');
+const createApp = require('./ngapp/createApp');
+const createComponent = require('./ngcomponent/createComponent');
+const createModule = require('./ngmodule/createModule');
 const { rejectNotImplemented } = require('./utils/notImplementedError');
 
 function makeProgram() {
@@ -31,7 +31,6 @@ function getInputs({ app, component, directive, module, service, path }) {
   };
 }
 
-
 function whatShouldIdo({ appName, componentName, directiveName, moduleName, serviceName, dir }) {
   let tasks = [];
   if (appName) {
@@ -46,7 +45,7 @@ function whatShouldIdo({ appName, componentName, directiveName, moduleName, serv
     });
   } else if (moduleName) {
     tasks.push({
-      title: `creating component ${moduleName} under dir ${dir}`,
+      title: `creating module ${moduleName} under dir ${dir}`,
       task: () => new Listr(createModule(moduleName))
     });
   } else if (directiveName || serviceName) {

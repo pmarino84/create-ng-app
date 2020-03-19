@@ -1,6 +1,6 @@
 const path = require('path');
 const { projectInstall } = require('pkg-install');
-const { makedir } = require('./file');
+const { makedir } = require('../utils/file');
 const copySkeleton = require('./skeleton');
 const copyAppTemplates = require('./copyAppTemplates');
 

@@ -1,7 +1,8 @@
+const path = require('path');
 const { upperFirst, kebabCase } = require('lodash');
-const { asyncCompileFileByName, writeCompiledToFile } = require('./template');
+const { asyncCompileFileByPath, writeCompiledToFile } = require('../utils/template');
 
-const asyncCompileComponentFile = (fileName, options) => asyncCompileFileByName('component/' + fileName, options);
+const asyncCompileComponentFile = (fileName, options) => asyncCompileFileByPath(path.resolve(__dirname, fileName), options);
 
 function asyncCompileComponentScriptTemplate(componentName) {
   const componentClassName = upperFirst(componentName);

@@ -1,7 +1,7 @@
 const path = require('path');
-const { asyncCompileFileByName, writeCompiledToFile } = require('./template');
+const { asyncCompileFileByPath, writeCompiledToFile } = require('../utils/template');
 
-const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByName(fileName, { name: appName });
+const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByPath(path.resolve(__dirname, 'templates', fileName), { name: appName });
 
 const asyncCompilePackageJsonTemplate = (appName) => asyncCompileFileWithAppName('package.json', appName);
 
