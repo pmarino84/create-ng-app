@@ -15,11 +15,11 @@ function makeProgram() {
   const program = new Command();
 
   program.version('1.0.0').name('nguno')
-    .option('-a, --app <appName>', 'create application', null)
-    .option('-c, --component <componentName>', 'create component', null)
-    .option('-d, --directive <directiveName>', '[NOT IMPLEMENTED] create directive', null)
-    .option('-m, --module <moduleName>', 'create module', null)
-    .option('-s, --service <serviceName>', '[NOT IMPLEMENTED] create service', null);
+    .option('-a, --app <name>', 'create application', null)
+    .option('-c, --component <name>', 'create component', null)
+    .option('-d, --directive <name>', '[NOT IMPLEMENTED] create directive', null)
+    .option('-m, --module <name>', 'create module', null)
+    .option('-s, --service <name>', 'create service', null);
 
   return program;
 }
