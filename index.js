@@ -5,6 +5,7 @@ const createApp = require('./ngapp/createApp');
 const createComponent = require('./ngcomponent/createComponent');
 const createModule = require('./ngmodule/createModule');
 const createService = require('./ngservice/createService');
+const createDirective = require('./ngdirective/createDirective');
 const { rejectNotImplemented } = require('./utils/notImplementedError');
 
 const HELP_OPTIONS = ['-h', '--help'];
@@ -58,8 +59,8 @@ function whatShouldIdo({ appName, componentName, directiveName, moduleName, serv
     });
   } else if (directiveName) {
     tasks.push({
-      title: 'task not implemented',
-      task: rejectNotImplemented
+      title: `creating directive ${directiveName}`,
+      task: () => new Listr(createDirective(directiveName))
     });
   }
   return tasks;

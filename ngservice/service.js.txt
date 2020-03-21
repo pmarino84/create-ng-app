@@ -1,4 +1,4 @@
-export const {{serviceNameUpperCase}}_SERVICE_NAME = "{{serviceClassName}}Service";
+export const {{serviceNameUpperCase}}_SERVICE_NAME = "{{serviceName}}";
 
 export class {{serviceClassName}}Service {
   static $inject = [];
