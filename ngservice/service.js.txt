@@ -1,0 +1,7 @@
+export const {{serviceNameUpperCase}}_SERVICE_NAME = "{{serviceClassName}}Service";
+
+export class {{serviceClassName}}Service {
+  static $inject = [];
+
+  constructor() { }
+}

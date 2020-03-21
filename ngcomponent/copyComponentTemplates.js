@@ -4,9 +4,9 @@ const { asyncCompileFileByPath, writeCompiledToFile } = require('../utils/templa
 
 const asyncCompileComponentFile = (fileName, options) => asyncCompileFileByPath(path.resolve(__dirname, fileName), options);
 
-function asyncCompileComponentScriptTemplate(componentName) {
+function asyncCompileComponentScriptTemplate(componentName, componentNameUpperCase) {
   const componentClassName = upperFirst(componentName);
-  return asyncCompileComponentFile('component.js.txt', { componentName, componentClassName });
+  return asyncCompileComponentFile('component.js.txt', { componentName, componentClassName, componentNameUpperCase });
 }
 
 function asyncCompileComponentHtmlTemplate(componentName) {
@@ -28,8 +28,8 @@ const writeComponentHtml = (targetDir, componentName, content) => writeComponent
 
 const writeComponentCss = (targetDir, componentName, content) => writeComponentFile(targetDir, componentName, 'css', content);
 
-async function copyComponentTemplates(targetDir, componentName) {
-  const scriptContent = await asyncCompileComponentScriptTemplate(componentName);
+async function copyComponentTemplates(targetDir, componentName, componentNameUpperCase) {
+  const scriptContent = await asyncCompileComponentScriptTemplate(componentName, componentNameUpperCase);
   const htmlContent = await asyncCompileComponentHtmlTemplate(componentName);
   const cssContent = await asyncCompileComponentCssTemplate(componentName);
   return writeComponentScript(targetDir, componentName, scriptContent) && writeComponentHtml(targetDir, componentName, htmlContent) && writeComponentCss(targetDir, componentName, cssContent);

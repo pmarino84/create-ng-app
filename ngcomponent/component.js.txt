@@ -1,17 +1,17 @@
 import template from './{{componentName}}.component.html';
 import './{{componentName}}.component.css';
 
-export const COMPONENT_NAME = '{{componentName}}';
+export const {{componentNameUpperCase}}_COMPONENT_NAME = '{{componentName}}';
 
-export class {{componentClassName}} {
+export class {{componentClassName}}ComponentController {
   static $inject = [];
   constructor(...args) {
     super(...args);
   }
 }
 
-export const {{componentName}}Configuration = {
-  controller: {{componentClassName}},
+export const {{componentName}}ComponentConfiguration = {
+  controller: {{componentClassName}}ComponentController,
   template: template,
   bindings: { }
 };

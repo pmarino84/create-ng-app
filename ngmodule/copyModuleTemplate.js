@@ -3,11 +3,11 @@ const { asyncCompileFileByPath, writeCompiledToFile } = require('../utils/templa
 
 const asyncCompileModuleScriptTemplate = (moduleName, moduleNameCamelCase) => asyncCompileFileByPath(path.resolve(__dirname, 'module.txt'), { moduleName, moduleNameCamelCase });
 
-const writeModuleScript = (targetDir, content) => writeCompiledToFile(targetDir, 'index.js', content);
+const writeModuleScript = (targetDir, moduleName, content) => writeCompiledToFile(targetDir, `${moduleName}.module.js`, content);
 
 async function copyModuleTemplate(targetDir, moduleName, moduleNameCamelCase) {
   const content = await asyncCompileModuleScriptTemplate(moduleName, moduleNameCamelCase);
-  return writeModuleScript(targetDir, content);
+  return writeModuleScript(targetDir, moduleName, content);
 }
 
 module.exports = copyModuleTemplate;
