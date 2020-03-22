@@ -1,12 +1,14 @@
 const Listr = require('listr');
 const { mkdir, resolve } = require('../../../utils/file.v2');
+const { camelCase } = require('../../../utils/string');
 const copyModuleTemplate = require('./copyModuleTemplate');
 
 async function createModule(name, force) {
+  const moduleNameCamelCase = camelCase(name);
   const targetDir = resolve(process.cwd(), moduleNameCamelCase);
   const tasks = new Listr([
     { title: `creating directory ${targetDir}`, task: () => mkdir(targetDir) },
-    { title: `copying compiled template into ${targetDir}`, task: () => copyModuleTemplate(targetDir, name) }
+    { title: `copying compiled template into ${targetDir}`, task: () => copyModuleTemplate(targetDir, name, moduleNameCamelCase) }
   ]);
   return tasks.run();
 }
