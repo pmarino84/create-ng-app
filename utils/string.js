@@ -4,6 +4,8 @@ const toClassName = str => upperFirst(camelCase(str));
 
 const toNgNameConstant = str => join(split(upperCase(str), ' '), '_');
 
+const toComponentSelector = str => kebabCase(str);
+
 module.exports = {
   camelCase,
   upperCase,
@@ -12,5 +14,6 @@ module.exports = {
   upperFirst,
   kebabCase,
   toClassName,
-  toNgNameConstant
+  toNgNameConstant,
+  toComponentSelector
 };

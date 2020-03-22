@@ -1,7 +1,7 @@
-const path = require('path');
-const { asyncCompileFileByPath, writeCompiledToFile } = require('../utils/template');
+const { resolve } = require('../../utils/file.v2');
+const { asyncCompileFileByPath, writeCompiledToFile } = require('../../utils/template');
 
-const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByPath(path.resolve(__dirname, 'templates', fileName), { name: appName });
+const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByPath(resolve(__dirname, 'templatesApp', fileName), { name: appName });
 
 const asyncCompilePackageJsonTemplate = (appName) => asyncCompileFileWithAppName('package.json', appName);
 
@@ -13,13 +13,16 @@ const writePackageJson = (targetDir, content) => writeCompiledToFile(targetDir, 
 
 const writeReadMe = (targetDir, content) => writeCompiledToFile(targetDir, 'README.md', content);
 
-const writeIndexHtml = (targetDir, content) => writeCompiledToFile(path.resolve(targetDir, 'static'), 'index.html', content);
+const writeIndexHtml = (targetDir, content) => writeCompiledToFile(resolve(targetDir, 'static'), 'index.html', content);
 
-async function copyAppTemplates(targetDir, appName) {
+async function copyTemplatesApp(targetDir, appName) {
   const packageJson = await asyncCompilePackageJsonTemplate(appName);
   const readMe = await asyncCompileReadmeTemplate(appName);
   const indexHtml = await asyncCompileIndexHTmlTemplate(appName);
-  return writePackageJson(targetDir, packageJson) && writeReadMe(targetDir, readMe) && writeIndexHtml(targetDir, indexHtml);
-};
+  writePackageJson(targetDir, packageJson);
+  writeReadMe(targetDir, readMe);
+  writeIndexHtml(targetDir, indexHtml);
+  return true;
+}
 
-module.exports = copyAppTemplates;
+module.exports = copyTemplatesApp;

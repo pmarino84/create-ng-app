@@ -1,4 +1,4 @@
-const { writeCompiledToFile } = require('../utils/template');
+const { writeCompiledToFile } = require('../../../utils/template');
 
 const writeDirectiveScriptToFile = (targetDir, directiveName, content) => writeCompiledToFile(targetDir, `${directiveName}.directive.js`, content);
 
@@ -29,7 +29,8 @@ ${name}Directive.$inject = [];
 
 async function copyDirectiveTemplate(targetDir, directiveName) {
   const content = makeContent(directiveName);
-  return writeDirectiveScriptToFile(targetDir, directiveName, content);
+  writeDirectiveScriptToFile(targetDir, directiveName, content);
+  return true;
 }
 
 module.exports = copyDirectiveTemplate;

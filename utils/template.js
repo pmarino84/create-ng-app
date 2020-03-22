@@ -1,6 +1,5 @@
-const path = require('path');
 const _ = require('lodash');
-const { asyncReadFile, writeFile } = require('./file');
+const { asyncReadFile, writeFile, resolve } = require('./file.v2');
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
@@ -11,7 +10,7 @@ function compile(template, options) {
 
 const asyncCompileFileByPath = (pathToFile, options) => asyncReadFile(pathToFile).then(data => compile(data.toString(), options));
 
-const writeCompiledToFile = (targetDir, fileName, content) => writeFile(path.resolve(targetDir, fileName), content);
+const writeCompiledToFile = (targetDir, fileName, content) => writeFile(resolve(targetDir, fileName), content);
 
 module.exports = {
   asyncCompileFileByPath,
