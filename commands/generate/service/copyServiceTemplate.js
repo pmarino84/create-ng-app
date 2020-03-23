@@ -1,4 +1,4 @@
-const { resolve } = require('../../../utils/file.v2');
+const { resolve } = require('../../../utils/file');
 const { asyncCompileFileByPath, writeCompiledToFile } = require('../../../utils/template');
 
 const asyncCompileServiceScriptTemplate = (serviceName, serviceClassName, serviceNameUpperCase) => asyncCompileFileByPath(resolve(__dirname, 'service.js.txt'), { serviceName, serviceClassName, serviceNameUpperCase });

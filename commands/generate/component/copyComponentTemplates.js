@@ -1,4 +1,4 @@
-const { resolve } = require('../../../utils/file.v2');
+const { resolve } = require('../../../utils/file');
 const { toClassName, toNgNameConstant, toComponentSelector } = require('../../../utils/string');
 const { asyncCompileFileByPath, writeCompiledToFile } = require('../../../utils/template');
 

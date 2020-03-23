@@ -1,5 +1,5 @@
 const Listr = require('listr');
-const { mkdir, resolve } = require('../../../utils/file.v2');
+const { mkdir, resolve } = require('../../../utils/file');
 const { camelCase } = require('../../../utils/string');
 const copyDirectiveTemplate = require('./copyDirectiveTemplate');
 

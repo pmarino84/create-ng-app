@@ -1,4 +1,4 @@
-const { resolve } = require('../../../utils/file.v2');
+const { resolve } = require('../../../utils/file');
 const { asyncCompileFileByPath, writeCompiledToFile } = require('../../../utils/template');
 
 const asyncCompileModuleScriptTemplate = (moduleName, moduleNameCamelCase) => asyncCompileFileByPath(resolve(__dirname, 'module.txt'), { moduleName, moduleNameCamelCase });

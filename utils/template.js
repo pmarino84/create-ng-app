@@ -1,5 +1,5 @@
 const _ = require('lodash');
-const { asyncReadFile, writeFile, resolve } = require('./file.v2');
+const { asyncReadFile, writeFile, resolve } = require('./file');
 
 _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
 
