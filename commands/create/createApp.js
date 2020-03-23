@@ -12,7 +12,7 @@ async function createApp(name, force) {
 
   const tasks = new Listr([
     // create app directory
-    { title: `creating directory ${targetDir}`, task: () => mkdir(targetDir) },
+    { title: `creating directory ${targetDir}`, task: () => mkdir(targetDir, force) },
     // copy skeleton files
     { title: 'copying skeleton app', task: () => copyskeletonApp(targetDir) },
     // copy template files

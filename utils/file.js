@@ -47,7 +47,7 @@ const asyncAccessReadWrite = path => asyncAccess(path, F_OK | R_OK | W_OK);
  * @param {string}  path  A path to a file. If a URL is provided, it must use the `file:` protocol.
  * should be created. If a string is passed, it is parsed as an octal integer. If not specified, defaults to `0o777`.
  */
-const mkdir = (path) => mkdirSync(path);
+const mkdir = (path, force) => mkdirSync(path, { recursive: !!force });
 
 /**
  * Synchronously reads the entire contents of a file.
