@@ -1,0 +1,11 @@
+export const {{filterNameUpperCase}}_FILTER_NAME = "{{filterName}}"
+
+export function {{filterName}}Factory (/* dependency_1, dependency_2, ... */) {
+
+  function {{filterName}}(/* input_1, input_2, ... */) { }
+
+  return {{filterName}}
+}
+
+{{filterName}}Factory.$inject = []
+
