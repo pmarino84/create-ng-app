@@ -3,6 +3,7 @@ const componentCommand = require('./component');
 const directiveCommand = require('./directive');
 const moduleCommand = require('./module');
 const serviceCommand = require('./service');
+const providerCommand = require('./provider');
 
 const command = createCommand('generate');
 
@@ -16,5 +17,6 @@ command.addCommand(componentCommand);
 command.addCommand(directiveCommand);
 command.addCommand(moduleCommand);
 command.addCommand(serviceCommand);
+command.addCommand(providerCommand);
 
 module.exports = command;

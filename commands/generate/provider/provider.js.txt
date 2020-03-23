@@ -1,0 +1,18 @@
+export const {{providerNameUpperCase}}_PROVIDER_NAME = '{{providerName}}'
+
+class {{providerClassName}} {
+  constructor(/* dependency_1, input_1, ... */) { }
+}
+
+export function {{providerName}}Provider() {
+  /**
+   * Add variables and method here
+   * es:
+   * var input_1 = false
+   * this.setInput_1 = (val) => input_1 = !!val;
+   */
+
+  this.$get = [/* 'dependency_1',  */ function {{providerName}}Factory(/* dependency_1  */) {
+    return new {{providerClassName}}(/* dependency_1, input_1, ... */)
+  }]
+}
