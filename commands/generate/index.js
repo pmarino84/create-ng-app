@@ -5,6 +5,7 @@ const moduleCommand = require('./module');
 const serviceCommand = require('./service');
 const providerCommand = require('./provider');
 const filterCommand = require('./filter');
+const factoryCommand = require('./factory');
 
 const command = createCommand('generate');
 
@@ -20,5 +21,6 @@ command.addCommand(moduleCommand);
 command.addCommand(serviceCommand);
 command.addCommand(providerCommand);
 command.addCommand(filterCommand);
+command.addCommand(factoryCommand);
 
 module.exports = command;

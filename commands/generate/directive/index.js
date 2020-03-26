@@ -7,6 +7,7 @@ command.description('Create an AngularJs directive');
 
 command.arguments('<name> [options]');
 
+command.option('-f, --force', 'if it already exists overwrite them');
 command.option('-m, --module <name>', 'add to the module');
 
 command.action(function (name, options, cmd) {

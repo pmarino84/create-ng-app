@@ -1,0 +1,7 @@
+export const {{factoryNameUpperCase}}_FACTORY_NAME = '{{factoryName}}'
+
+export function {{factoryName}}Factory() {
+  var something = '123';
+  return something
+}
+{{factoryName}}Factory.$inject = []
