@@ -3,7 +3,7 @@ const { projectInstall } = require('pkg-install');
 const { mkdir, resolve } = require('../../utils/file');
 const copyskeletonApp = require('./copyskeletonApp');
 const copyTemplatesApp = require('./copyTemplatesApp');
-const { logErr } = require('../../utils/logger');
+const { logErr, logSuccess } = require('../../utils/logger');
 const { init } = require('../../utils/git');
 
 async function createApp(name, force) {
@@ -25,7 +25,13 @@ async function createApp(name, force) {
     // log usage informations
   ]);
 
-  return tasks.run().catch(err => logErr(err.message));
+  return tasks.run().then(() => {
+    logSuccess(`
+      run cd ${name}
+      run npm start
+      edit some files with your preferred editor and see the magic in action
+    `);
+  }).catch(err => logErr(err.message));
 }
 
 module.exports = createApp;
