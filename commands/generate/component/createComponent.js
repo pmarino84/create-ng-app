@@ -11,7 +11,7 @@ function checking(targetDir, fileName, force) {
 
   if (fileAlreadyExists) {
     if (!force) promise = Promise.reject(new Error(pathToFile + ' file already exist. Add --force (-f) on your command to overwrite it.'));
-    else Promise.resolve(true)
+    else promise = Promise.resolve(true)
   } else {
     const dirAlreadyExists = exists(targetDir);
     if (!dirAlreadyExists) mkdir(targetDir);
