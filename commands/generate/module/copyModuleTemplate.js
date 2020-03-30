@@ -7,7 +7,7 @@ const writeModuleScript = (targetDir, moduleName, content) => writeCompiledToFil
 
 async function copyModuleTemplate(targetDir, name, moduleNameCamelCase) {
   const content = await asyncCompileModuleScriptTemplate(name, moduleNameCamelCase);
-  writeModuleScript(targetDir, name, content);
+  writeModuleScript(targetDir, moduleNameCamelCase, content);
   return true;
 }
 
