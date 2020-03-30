@@ -8,7 +8,7 @@ command.description('Create an AngularJs service');
 command.arguments('<name> [options]');
 
 command.option('-f, --force', 'if it already exists overwrite them');
-command.option('-m, --module <name>', 'add to the module');
+// command.option('-m, --module <name>', 'add to the module');
 
 command.action(function (name, options, cmd) {
   const moduleName = (options && options.module) || (cmd && cmd.module);
