@@ -13,12 +13,10 @@
   "keywords": [
     "nguno",
     "cli",
-    "app",
+    "application",
     "project",
     "bootstrap",
-    "angularjs",
-    "create angularjs app",
-    "create angularjs project"
+    "angularjs"
   ],
   "author": "Pietro Marino <pietro.marino_84@hotmail.it>",
   "license": "MIT",

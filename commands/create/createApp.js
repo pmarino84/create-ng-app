@@ -3,7 +3,7 @@ const { projectInstall } = require('pkg-install');
 const { mkdir, resolve, exists } = require('../../utils/file');
 const copyskeletonApp = require('./copyskeletonApp');
 const copyTemplatesApp = require('./copyTemplatesApp');
-const { logErr, logSuccess } = require('../../utils/logger');
+const { log, logErr, logInfo } = require('../../utils/logger');
 const { init } = require('../../utils/git');
 const rimraf = require('rimraf');
 
@@ -44,15 +44,22 @@ async function createApp(name, force) {
     { title: 'initialize git', task: () => init(targetDir) },
     // npm install
     { title: 'installing dependencies', task: () => projectInstall({ cwd: targetDir }) }
-    // log usage informations
   ]);
 
   return tasks.run().then(() => {
-    logSuccess(`
-      cd ${name}
-      run npm start
-      edit some files with your preferred editor and see the magic in action
-    `);
+    log(`\nSuccess! Created ${name} at ${targetDir}`);
+    log('Inside that directory, you can run several commands:\n');
+    logInfo('npm start');
+    log('Starts the development server.\n');
+    // logInfo('npm test');
+    // log('Starts the test runner.\n');
+    logInfo('npm run build');
+    log('Bundles the app into static files for production.\n');
+    log('Begin by typing:');
+    log(`cd ${name}`);
+    log('npm start\n');
+    log('edit some files with your preferred editor and see the magic in action.');
+    log('Good job!');
   }).catch(err => logErr(err.message));
 }
 

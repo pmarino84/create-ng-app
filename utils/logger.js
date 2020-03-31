@@ -29,6 +29,7 @@ module.exports = {
   warn,
   success,
   banner,
+  log,
   logInfo,
   logErr,
   logWarn,

@@ -1,11 +1,11 @@
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
-function makeCssRules(extract) {
-  let loaders = ['css-loader'];
+function makeCssRules (extract) {
+  const loaders = ['css-loader']
   if (extract) {
-    loaders.unshift(MiniCssExtractPlugin.loader);
+    loaders.unshift(MiniCssExtractPlugin.loader)
   } else {
-    loaders.unshift('style-loader');
+    loaders.unshift('style-loader')
   }
   return [
     { test: /\.css$/, loaders: loaders },
@@ -13,7 +13,7 @@ function makeCssRules(extract) {
       test: /\.s[ac]ss$/,
       loaders: loaders.concat([
         {
-          loader: "sass-loader",
+          loader: 'sass-loader',
           options: { implementation: require('dart-sass') }
         }
       ])
@@ -21,8 +21,8 @@ function makeCssRules(extract) {
   ]
 }
 
-function makeCssPlugins(extract) {
-  return extract ? [new MiniCssExtractPlugin({ filename: "[name].css", chunkFilename: "[id].css" })] : [];
+function makeCssPlugins (extract) {
+  return extract ? [new MiniCssExtractPlugin({ filename: '[name].css', chunkFilename: '[id].css' })] : []
 }
 
 module.exports = {
