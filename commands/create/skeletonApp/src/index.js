@@ -1,5 +1,5 @@
 import { bootstrap, element } from 'angular'
-import appModule from './app'
+import appModule from './app/app.module'
 import './index.css'
 
 const whenReady = (el, fn) => element(el).ready(fn)
