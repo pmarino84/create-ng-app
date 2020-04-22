@@ -36,7 +36,9 @@ To see all the available options run `npx nguno -h`
 
 ### create
 
+```
 npx nguno create <name>
+```
 
 Under current directory create and initialize the runnable application skeleton inside `name` folder:
 
@@ -85,12 +87,14 @@ app
 
 Like `@angular/cli` generates files based on a schema.
 
+```
 npx nguno generate <schema> [options]
 npx nguno g <schema> [options]
+```
 
 #### Arguments
 
-<schema> The schema to generate, this option can take one of the following sub-commands:
+`<schema>` The schema to generate, this option can take one of the following sub-commands:
 
 * component
 * directive
@@ -104,35 +108,49 @@ npx nguno g <schema> [options]
 
 ##### component
 
+```
 npx nguno generate component <name> [options]
 npx nguno g component <name> [options]
+```
 
 ##### directive
 
+```
 npx nguno generate directive <name> [options]
 npx nguno g directive <name> [options]
+```
 
 ##### factory
 
+```
 npx nguno generate factory <name> [options]
 npx nguno g factory <name> [options]
+```
 
 ##### filter
 
+```
 npx nguno generate filter <name> [options]
 npx nguno g filter <name> [options]
+```
 
 ##### module
 
+```
 npx nguno generate module <name> [options]
 npx nguno g module <name> [options]
+```
 
 ##### provider
 
+```
 npx nguno generate provider <name> [options]
 npx nguno g provider <name> [options]
+```
 
 ##### service
 
+```
 npx nguno generate service <name> [options]
 npx nguno g service <name> [options]
+```
