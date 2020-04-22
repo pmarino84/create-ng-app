@@ -2,5 +2,6 @@
   - [ ] css modules support
   - [ ] worker support (webpack-worker) 
 - [ ] Add library skeleton creation command
-- [ ] rename test/index.js in test/index.test.js
+- [X] rename test/index.js in test/index.test.js
 - [ ] complete documentation on README.md file
+  - [ ] describe options command
