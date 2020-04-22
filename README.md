@@ -1,6 +1,6 @@
 # Nguno
 
-Command line interface like [@angular/cli](https://cli.angular.io), [create-react-app](https://github.com/facebook/create-react-app) and vue-cli but simplified (for now) and specialized for AngularJs applications.
+Command line interface like [@angular/cli](https://cli.angular.io), [create-react-app](https://github.com/facebook/create-react-app) and [vue-cli](https://cli.vuejs.org) but simplified (for now) and specialized for AngularJs applications.
 Create applications skeleton.
 Also you can create modules, components, services, directives and filter boilerplate files.
 
@@ -11,6 +11,7 @@ cd my-app
 npm start
 
 We raccomend you to use latest version via npx.
+
 ([npx](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b) comes with npm 5.2+ and higher)
 
 If you use npm 5.1 or earlier, you can't use `npx`. Instead, install `nguno` globally:

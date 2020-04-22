@@ -5,3 +5,6 @@
 - [X] rename test/index.js in test/index.test.js
 - [ ] complete documentation on README.md file
   - [ ] describe options command
+  - [ ] add direct link to sub-commands
+  - [ ] fix line breaks
+  - [ ] add sub-commands description
