@@ -3,6 +3,8 @@ const createModule = require('./createModule');
 
 const command = createCommand('module');
 
+command.alias('m');
+
 command.description('Create an AngularJs component');
 
 command.arguments('<name>');

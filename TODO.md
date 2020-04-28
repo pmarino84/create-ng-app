@@ -1,10 +1,14 @@
 - [ ] Add to skeleton app:
-  - [ ] css modules support
-  - [ ] worker support (webpack-worker) 
-- [ ] Add library skeleton creation command
+  - [X] css modules support
+  - [ ] worker support (webpack-worker)
+- [ ] refactor create command
+  - [X] move app creation under app sub command
+  - [ ] Add library skeleton creation command
 - [X] rename test/index.js in test/index.test.js
 - [ ] complete documentation on README.md file
   - [ ] describe options command
-  - [ ] add direct link to sub-commands
+  - [X] add direct link to sub-commands
   - [ ] fix line breaks
   - [ ] add sub-commands description
+- [X] add aliases to commands
+- [ ] rename *.test.js file into *.spec.js

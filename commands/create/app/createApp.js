@@ -1,10 +1,10 @@
 const Listr = require('listr');
 const { projectInstall } = require('pkg-install');
-const { mkdir, resolve, exists } = require('../../utils/file');
+const { mkdir, resolve, exists } = require('../../../utils/file');
 const copyskeletonApp = require('./copyskeletonApp');
 const copyTemplatesApp = require('./copyTemplatesApp');
-const { log, logErr, logInfo } = require('../../utils/logger');
-const { init } = require('../../utils/git');
+const { log, logErr, logInfo } = require('../../../utils/logger');
+const { init } = require('../../../utils/git');
 const rimraf = require('rimraf');
 
 function checking(targetDir, name, force) {

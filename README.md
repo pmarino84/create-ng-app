@@ -37,11 +37,25 @@ To see all the available options run `npx nguno -h`
 
 ### create
 
+Create an AngularJs application or library.
+
 ```
-npx nguno create <name>
+npx nguno create <schema> [options]
+npx nguno c <schema> [options]
 ```
 
-Under current directory create and initialize the runnable application skeleton inside `name` folder:
+### Arguments
+
+`<schema>` The schema to generate, this option can take one of the following sub-commands:
+
+* [app](https://github.com/pmarino84/nguno#app)
+* [lib](https://github.com/pmarino84/nguno#lib)
+
+#### Sub commands
+
+##### app
+
+Create and initialize the runnable application skeleton inside `name` folder:
 
 ```
 app
@@ -83,6 +97,11 @@ app
     ├── index.js
     └── link.component.test.js
 ```
+##### lib
+
+ATTENTION! This command is under development with [Rollup.js](https://rollupjs.org/guide/en/) compiler.
+
+Create and initialize the runnable library skeleton inside `name` folder.
 
 ### generate
 
@@ -97,13 +116,13 @@ npx nguno g <schema> [options]
 
 `<schema>` The schema to generate, this option can take one of the following sub-commands:
 
-* component
-* directive
-* factory
-* filter
-* module
-* provider
-* service
+* [component](https://github.com/pmarino84/nguno#component)
+* [directive](https://github.com/pmarino84/nguno#directive)
+* [factory](https://github.com/pmarino84/nguno#factory)
+* [filter](https://github.com/pmarino84/nguno#filter)
+* [module](https://github.com/pmarino84/nguno#module)
+* [provider](https://github.com/pmarino84/nguno#provider)
+* [service](https://github.com/pmarino84/nguno#service)
 
 #### Sub commands
 

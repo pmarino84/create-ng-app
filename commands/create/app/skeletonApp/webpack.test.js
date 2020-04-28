@@ -1,4 +1,4 @@
-const commons = require('./webpack.common.js')
+const commons = require('./webpack.common')
 const wmerge = require('webpack-merge')
 // const BabelMinifyWebpackPlugin = require('babel-minify-webpack-plugin')
 const { makeCssPlugins, makeCssRules } = require('./webpack.utils')

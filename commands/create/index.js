@@ -1,18 +1,16 @@
 const { createCommand } = require('commander');
-const createApp = require('./createApp');
+const appCommand = require('./app');
+const libCommand = require('./lib');
 
 const command = createCommand('create');
 
-command.description('Create and intialize an AngularJs application');
+command.alias('c');
 
-command.arguments('<name>');
+command.description('Create an AngularJs application or library');
 
-command.option('-f, --force', 'If app directory already exist overwrite it');
+command.arguments('<schema> [options]');
 
-command.action((name, options, cmd) => {
-  const force = (options && options.force) || (cmd && cmd.force)
-  console.log(`Create ${name} AngularJs application${force ? ', force overwrite' : ''}`);
-  return createApp(name, force);
-});
+command.addCommand(appCommand);
+command.addCommand(libCommand);
 
 module.exports = command;

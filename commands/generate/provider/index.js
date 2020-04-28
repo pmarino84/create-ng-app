@@ -3,6 +3,8 @@ const createProvider = require('./createProvider');
 
 const command = createCommand('provider');
 
+command.alias('p');
+
 command.description('Create an AngularJs provider');
 
 command.arguments('<name> [options]');

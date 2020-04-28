@@ -1,5 +1,5 @@
-const { resolve } = require('../../utils/file');
-const { asyncCompileFileByPath, writeCompiledToFile } = require('../../utils/template');
+const { resolve } = require('../../../utils/file');
+const { asyncCompileFileByPath, writeCompiledToFile } = require('../../../utils/template');
 
 const asyncCompileFileWithAppName = (fileName, appName) => asyncCompileFileByPath(resolve(__dirname, 'templatesApp', fileName), { name: appName });
 

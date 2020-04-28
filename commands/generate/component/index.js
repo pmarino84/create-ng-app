@@ -3,6 +3,8 @@ const createComponent = require('./createComponent');
 
 const command = createCommand('component');
 
+command.alias('c');
+
 command.description('Create an AngularJs component');
 
 command.arguments('<name> [options]');

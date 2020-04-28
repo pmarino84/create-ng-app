@@ -1,4 +1,4 @@
-const { asyncCopy, resolve } = require('../../utils/file');
+const { asyncCopy, resolve } = require('../../../utils/file');
 
 function copyskeletonApp(targetDir) {
   const src = resolve(__dirname, 'skeletonApp');

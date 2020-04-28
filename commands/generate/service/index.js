@@ -3,6 +3,8 @@ const createService = require('./createService');
 
 const command = createCommand('service');
 
+command.alias('s');
+
 command.description('Create an AngularJs service');
 
 command.arguments('<name> [options]');

@@ -3,6 +3,8 @@ const createDirective = require('./createDirective');
 
 const command = createCommand('directive');
 
+command.alias('d');
+
 command.description('Create an AngularJs directive');
 
 command.arguments('<name> [options]');

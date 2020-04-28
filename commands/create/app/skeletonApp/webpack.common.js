@@ -19,8 +19,8 @@ module.exports = {
   },
   output: {
     path: BUILD_FOLDER,
-    filename: '[name].bundle.js',
-    sourceMapFilename: 'sourcemaps/[name].map'
+    filename: '[name].[hash].js',
+    sourceMapFilename: 'sourcemaps/[filename].map'
   },
   resolve: {
     extensions: ['.ts', '.js', '.html', '.css', '.sass', '.scss']
@@ -41,14 +41,7 @@ module.exports = {
       { test: /\.html$/, exclude: /node_modules/, loader: 'html-loader?exportAsEs6Default' },
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader', 'eslint-loader'] },
       { test: /\.ts$/, exclude: /node_modules/, loaders: ['babel-loader', 'ts-loader', 'eslint-loader'] },
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: 'file-loader'
-          }
-        ]
-      }
+      { test: /\.(png|jpe?g|gif|svg)$/i, use: ['file-loader'] }
     ]
   },
   plugins: [
