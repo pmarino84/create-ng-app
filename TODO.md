@@ -1,6 +1,6 @@
-- [ ] Add to skeleton app:
+- [X] Add to skeleton app:
   - [X] css modules support
-  - [ ] worker support (webpack-worker)
+  - [X] worker support (webpack-worker)
 - [ ] refactor create command
   - [X] move app creation under app sub command
   - [ ] Add library skeleton creation command

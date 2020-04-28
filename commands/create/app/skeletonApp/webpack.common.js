@@ -41,7 +41,8 @@ module.exports = {
       { test: /\.html$/, exclude: /node_modules/, loader: 'html-loader?exportAsEs6Default' },
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel-loader', 'eslint-loader'] },
       { test: /\.ts$/, exclude: /node_modules/, loaders: ['babel-loader', 'ts-loader', 'eslint-loader'] },
-      { test: /\.(png|jpe?g|gif|svg)$/i, use: ['file-loader'] }
+      { test: /\.(png|jpe?g|gif|svg)$/i, use: ['file-loader'] },
+      { test: /\.worker\.js$/, loaders: [{ loader: 'worker-loader', options: { inline: true } }] }
     ]
   },
   plugins: [
