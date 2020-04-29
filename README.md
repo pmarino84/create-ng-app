@@ -53,11 +53,9 @@ npx nguno c <schema> [options]
 
 ### Options
 
-| Option               | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| `--force=true|false` | When true, forces overwriting of existing files. |
-|                      | Default: false                                   |
-|                      | Aliases: -f                                      |
+| Option               | Description                                                                       |
+| -------------------- | --------------------------------------------------------------------------------- |
+| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 #### Sub commands
 
@@ -134,11 +132,9 @@ npx nguno g <schema> [options]
 
 ### Options
 
-| Option               | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| `--force=true|false` | When true, forces overwriting of existing files. |
-|                      | Default: false                                   |
-|                      | Aliases: -f                                      |
+| Option               | Description                                                                       |
+| -------------------- | --------------------------------------------------------------------------------- |
+| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 #### Sub commands
 
@@ -157,11 +153,9 @@ Create a new component.
 
 ###### Options
 
-| Option               | Description                                      |
-| -------------------- | ------------------------------------------------ |
-| `--force=true|false` | When true, forces overwriting of existing files. |
-|                      | Default: false                                   |
-|                      | Aliases: -f                                      |
+| Option               | Description                                                                       |
+| -------------------- | --------------------------------------------------------------------------------- |
+| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### directive
 
@@ -275,4 +269,4 @@ Create a new service.
 
 | Option               | Description                                                                       |
 | -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| ```--force=true|false``` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
