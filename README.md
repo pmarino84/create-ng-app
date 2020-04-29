@@ -53,9 +53,9 @@ npx nguno c <schema> [options]
 
 ### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 #### Sub commands
 
@@ -132,9 +132,9 @@ npx nguno g <schema> [options]
 
 ### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 #### Sub commands
 
@@ -153,9 +153,9 @@ Create a new component.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### directive
 
@@ -172,9 +172,9 @@ Create a new directive.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### factory
 
@@ -191,9 +191,9 @@ Create a new factory recipe.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### filter
 
@@ -210,9 +210,9 @@ Create a new filter.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### module
 
@@ -229,9 +229,9 @@ Create a new module.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### provider
 
@@ -248,9 +248,9 @@ Create a new provider.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| `--force=true|false` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
 
 ##### service
 
@@ -267,6 +267,6 @@ Create a new service.
 
 ###### Options
 
-| Option               | Description                                                                       |
-| -------------------- | --------------------------------------------------------------------------------- |
-| ```--force=true|false``` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
+| Option    | Description                                                                       |
+| --------- | --------------------------------------------------------------------------------- |
+| `--force` | When true, forces overwriting of existing files.<br>Default: false<br>Aliases: -f |
