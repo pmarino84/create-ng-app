@@ -1,7 +1,7 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-function makeCssRules (extract) {
+function makeCssRules(extract) {
   const moduleLoaders = [{ loader: 'css-loader', options: { importLoaders: 1, modules: true } }]
   const loaders = ['css-loader']
   if (extract) {
@@ -37,17 +37,21 @@ function makeCssRules (extract) {
   ]
 }
 
-function makeCssPlugins (extract) {
+function makeCssPlugins(extract) {
   return extract ? [new MiniCssExtractPlugin({ filename: '[name].[hash].css', chunkFilename: '[id].css' })] : []
 }
 
-function page (name, title, pathToEntryFile, template, filename, chunks) {
+function page(name, title, pathToEntryFile, template, filename, chunks) {
+  const pluginOptions = { inject: 'body', minify: true, hash: true, template, title }
+  if (filename) pluginOptions.filename = filename
+  if (chunks && chunks.length) pluginOptions.chunks = chunks.push(name)
+
   return {
     entry: {
       [name]: pathToEntryFile
     },
     plugins: [
-      new HtmlWebpackPlugin({ template, title, filename, chunks: chunks ? chunks.push(name) : [name], inject: 'body' })
+      new HtmlWebpackPlugin(pluginOptions)
     ]
   }
 }
