@@ -51,6 +51,14 @@ npx nguno c <schema> [options]
 * [app](https://github.com/pmarino84/nguno#app)
 * [lib](https://github.com/pmarino84/nguno#lib)
 
+### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 #### Sub commands
 
 ##### app
@@ -124,6 +132,14 @@ npx nguno g <schema> [options]
 * [provider](https://github.com/pmarino84/nguno#provider)
 * [service](https://github.com/pmarino84/nguno#service)
 
+### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 #### Sub commands
 
 ##### component
@@ -133,12 +149,40 @@ npx nguno generate component <name> [options]
 npx nguno g component <name> [options]
 ```
 
+Create a new component.
+
+###### Arguments
+
+`<name>` name of the component.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 ##### directive
 
 ```
 npx nguno generate directive <name> [options]
 npx nguno g directive <name> [options]
 ```
+
+Create a new directive.
+
+###### Arguments
+
+`<name>` name of the directive.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
 
 ##### factory
 
@@ -147,12 +191,40 @@ npx nguno generate factory <name> [options]
 npx nguno g factory <name> [options]
 ```
 
+Create a new factory recipe.
+
+###### Arguments
+
+`<name>` name of the factory.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 ##### filter
 
 ```
 npx nguno generate filter <name> [options]
 npx nguno g filter <name> [options]
 ```
+
+Create a new filter.
+
+###### Arguments
+
+`<name>` name of the filter.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
 
 ##### module
 
@@ -161,6 +233,20 @@ npx nguno generate module <name> [options]
 npx nguno g module <name> [options]
 ```
 
+Create a new module.
+
+###### Arguments
+
+`<name>` name of the module.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 ##### provider
 
 ```
@@ -168,9 +254,37 @@ npx nguno generate provider <name> [options]
 npx nguno g provider <name> [options]
 ```
 
+Create a new provider.
+
+###### Arguments
+
+`<name>` name of the provider.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |
+
 ##### service
 
 ```
 npx nguno generate service <name> [options]
 npx nguno g service <name> [options]
 ```
+
+Create a new service.
+
+###### Arguments
+
+`<name>` name of the service.
+
+###### Options
+
+| Option               | Description                                      |
+| -------------------- | ------------------------------------------------ |
+| `--force=true|false` | When true, forces overwriting of existing files. |
+|                      | Default: false                                   |
+|                      | Aliases: -f                                      |

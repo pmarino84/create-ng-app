@@ -5,10 +5,10 @@
   - [X] move app creation under app sub command
   - [ ] Add library skeleton creation command
 - [X] rename test/index.js in test/index.test.js
-- [ ] complete documentation on README.md file
-  - [ ] describe options command
+- [X] update documentation on README.md file
+  - [X] describe options command
   - [X] add direct link to sub-commands
-  - [ ] fix line breaks
-  - [ ] add sub-commands description
+  - [X] fix line breaks
+  - [X] add sub-commands description
 - [X] add aliases to commands
-- [ ] rename *.test.js file into *.spec.js
+- [ ] rename *.test.js file into *.spec.js and update README.md
