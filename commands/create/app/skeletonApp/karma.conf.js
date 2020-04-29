@@ -22,7 +22,7 @@ module.exports = function (config) {
     files: [
       'node_modules/angular/angular.min.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      { pattern: 'test/index.test.js' }
+      { pattern: 'test/**/*.spec.js' }
     ],
 
     // list of files / patterns to exclude
