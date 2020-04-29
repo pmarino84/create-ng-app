@@ -4,7 +4,7 @@ const { mkdir, resolve, exists } = require('../../../utils/file');
 const copyskeletonApp = require('./copyskeletonApp');
 const copyTemplatesApp = require('./copyTemplatesApp');
 const { log, logErr, logInfo } = require('../../../utils/logger');
-const { init } = require('../../../utils/git');
+const { runGit } = require('../../../utils/git');
 const rimraf = require('rimraf');
 
 function checking(targetDir, name, force) {
@@ -41,7 +41,7 @@ async function createApp(name, force) {
     // copy template files
     { title: 'copying compiled template into the app', task: () => copyTemplatesApp(targetDir, name) },
     // git init
-    { title: 'initialize git', task: () => init(targetDir) },
+    { title: 'initialize git', task: () => runGit(targetDir) },
     // npm install
     { title: 'installing dependencies', task: () => projectInstall({ cwd: targetDir }) }
   ]);
