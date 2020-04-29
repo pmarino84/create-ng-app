@@ -1,26 +1,17 @@
-const path = require('path')
-
+// const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+// const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
-
-const SRC_FOLDER_NAME = 'src'
-const BUILD_FOLDER_NAME = 'build'
-const STATIC_FOLDER_NAME = 'static'
-
-const SRC_FOLDER = path.resolve(__dirname, SRC_FOLDER_NAME)
-const BUILD_FOLDER = path.resolve(__dirname, BUILD_FOLDER_NAME)
-const STATIC_FOLDER = path.resolve(__dirname, STATIC_FOLDER_NAME)
+const { SRC_FOLDER, BUILD_FOLDER, STATIC_FOLDER } = require('./constants')
 
 module.exports = {
   context: SRC_FOLDER,
-  entry: {
-    app: './index.js'
-  },
+  // entry: {
+  //   app: './index.js'
+  // },
   output: {
     path: BUILD_FOLDER,
-    filename: '[name].[hash].js',
-    sourceMapFilename: 'sourcemaps/[filename].map'
+    filename: '[name].[hash].js'
   },
   resolve: {
     extensions: ['.ts', '.js', '.html', '.css', '.sass', '.scss']
@@ -47,7 +38,7 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({ template: path.resolve(STATIC_FOLDER, 'index.html'), inject: 'body' }),
+    // new HtmlWebpackPlugin({ template: path.resolve(STATIC_FOLDER, 'index.html'), inject: 'body' }),
     new CopyWebpackPlugin([{
       from: STATIC_FOLDER,
       to: BUILD_FOLDER,

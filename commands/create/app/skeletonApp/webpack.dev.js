@@ -1,7 +1,7 @@
-const commons = require('./webpack.common.js')
+const commons = require('./webpack.base')
 const wmerge = require('webpack-merge')
 const webpack = require('webpack')
-const { makeCssPlugins, makeCssRules } = require('./webpack.utils')
+const { makeCssPlugins, makeCssRules } = require('./webpack/utils')
 
 module.exports = wmerge(commons, {
   mode: 'development',

@@ -12,3 +12,6 @@
   - [X] add sub-commands description
 - [X] add aliases to commands
 - [X] rename *.test.js file into *.spec.js and update README.md
+- [ ] make logo192.png and logo512.png images or remove their reference from manifest.json into the skeleton app
+- [ ] add git first commit for create sub commands
+- [X] add support for multi pages for skeleton app

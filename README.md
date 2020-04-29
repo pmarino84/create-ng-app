@@ -104,7 +104,7 @@ app
 ```
 ##### lib
 
-ATTENTION! This command is under development with [Rollup.js](https://rollupjs.org/guide/en/) compiler.
+ATTENTION!!! This command is under development with [Rollup.js](https://rollupjs.org/guide/en/) compiler.
 
 Create and initialize the runnable library skeleton inside `name` folder.
 
