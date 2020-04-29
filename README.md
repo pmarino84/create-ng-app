@@ -99,9 +99,9 @@ app
 │   ├── index.css
 │   └── index.js
 └── test
-    ├── app.component.test.js
+    ├── app.component.spec.js
     ├── index.js
-    └── link.component.test.js
+    └── link.component.spec.js
 ```
 ##### lib
 

@@ -11,4 +11,4 @@
   - [X] fix line breaks
   - [X] add sub-commands description
 - [X] add aliases to commands
-- [ ] rename *.test.js file into *.spec.js and update README.md
+- [X] rename *.test.js file into *.spec.js and update README.md
