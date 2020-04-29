@@ -100,7 +100,6 @@ app
 │   └── index.js
 └── test
     ├── app.component.spec.js
-    ├── index.js
     └── link.component.spec.js
 ```
 ##### lib
